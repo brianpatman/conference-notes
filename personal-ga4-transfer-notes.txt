@@ -1,0 +1,64 @@
+###########################################
+#### Google Analytics 4 Transfer Notes ####
+###########################################
+
+Checklist on Google for Migration: https://support.google.com/analytics/answer/10759417?hl=en
+
+Create GA4 Property from your Universal Analytics property at Admin > Property > GA4 Setup Assistant
+	- This will create a GA4 Property that is linked to your existing Universal Analytics Property
+
+
+Import your Goals from your Universal Analytics Property
+	- Admin > Property > Setup Assistant
+	- Import Existing Goals from your connected Universal Analytics property
+	- Convert Goals
+		- Convert "page_path" to "page_location" in the conversion event; there is no page_path in GA4
+
+
+Google Signals
+	Admin > Property > Data Settings > Data Collection
+	Under "Google Signals Data Collection", hit the blue button that says "Get Started"
+
+
+Map Events to GA4 if necessary
+(https://support.google.com/analytics/answer/11091025?hl=en&ref_topic=11091421)
+
+Map Custom Dimensions and Metrics to GA4 if necessary
+	Check these paths in UA for any of these
+		Admin > Property > Custom Definitions > Custom Dimensions
+		Admin > Property > Custom Definitions > Custom Metrics
+
+
+Import Ad Links from your connected Universal Analytics property
+	- "This tool is the first step in getting your Analytics data into Google Ads. This makes the data available to Google Ads, but it isn’t being used until you take further action within Google Ads.""
+	- You get data from Google Ads in your GA4 property, but you must take action in your google Ads account to get the data from GA4 in Google Ads
+
+	"Don't forget"
+		- "By choosing to import the selected Google Ads links, you'll make data from your Google Analytics 4 property available to use in Google Ads."
+		- "Sign into your Google Ads account and import conversions or add your audiences to ad groups or campaigns. You can use these audiences with Google Ads to customize the campaign for people who have previously visited your site or app."
+		- "Be sure to activate Google Signals in order to enhance remarketing and reporting."
+
+
+Validate migrated conversions
+	Go to these two places; the numbers should be fairly similar, but may be off because GA4 counts each instance of a conversion and UA only counts one conversion per session
+		- GA4 go to "Reports > Engagement > Conversions" and look at the total number of conversions (Conversions).
+		- UA go to "Conversions > Goals > Overview" and look at the number of goal completions (Goal Completions).
+
+
+Verify Event Measurement
+	For a conversion to be counted, the corresponding event needs to be sent to GA4. To verify that an event is being sent, go to "Reports > Engagement > Events" or the Realtime report.
+	For debug instructions go to https://support.google.com/analytics/answer/11053539?hl=en&ref_topic=11053132
+
+
+On Google Ads
+	- https://support.google.com/analytics/answer/11053134#zippy=%2Cin-this-article
+	- To access the data from GA4, you'll need to Import Conversions (for bidding) or add audiences to a campaign or ad group (for remarketing)
+	https://support.google.com/analytics/answer/9379420#zippy=%2Cin-this-article
+	https://support.google.com/analytics/answer/10723132#zippy=%2Cin-this-article
+
+Migrate Audiences if necessary
+https://support.google.com/analytics/answer/11184423
+
+
+
+Users - If anyone can't get to the new properties, add them as a user
