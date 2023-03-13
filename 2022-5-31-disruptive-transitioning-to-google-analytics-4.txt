@@ -1,0 +1,80 @@
+#############################################
+##### Notes from Disruptive GA4 Webinar #####
+#############################################
+
+GA4 - Only option is GA4 if you set up a new website
+	- Privacy Sensitive, Data Secure solution
+	- Machine Learning to model conversions/events
+	- Deduplicates some of the cross-device events that exist
+
+July 1, 2023 -> Standard UA properties will no longer process new data
+	You'll be able to access historical data for a period of time after, however new data will only flow into GA4 properties
+Estimated January 1, 2024 -> No more access to UA historical data. Google notes to export your historical reports before then
+
+What to do before June 30th, 2022
+	- Upgrade to GA4 -> This sets you up to have Year-over-Year data in GA4 once GA4 fully takes over on July 1st, 2023
+	- Complete the migration checklist -> This ensures your new analytics property is setup correctly and pulling in the appropriate data
+		-A lot of companies are clicking "Upgrade to GA4", but not much else. Instead, you need to follow the checklist Google provides
+
+
+We've got 30 days; lets get this implemented in the month of June
+
+
+### Features we're most excited about ###
+
+Simple, Efficient, and Custom Intelligent Insights
+	- Insights that are driven by Machine Learning and AI
+	- Go deeper to understand the effectiveness of campaigns and platforms
+	- App / Web crossover
+	- Insights are customizable
+
+GA4 Combines Web & App Data in one
+	- Also uses session data to merge them
+
+Improves Cross-Device & Cross-Platform Data
+	- User journeys across identity spaces (de-duplication)
+	- Traiditional UA relies heavily on device ID
+	- GA4 uses User ID, device ID, and Google Signals
+
+Linking GA4 to BigQuery
+	- More indepth analysis and visualisation of data
+
+Migration Checklist
+	- Setup your new GA4 property alongside your existing UA property to collect data
+	-
+	- New Item - Consider channel groupings and UTM tagging; revise where necessary
+
+
+### Next Steps ###
+
+Select a Migration Option
+	- Your Web Admin / Tag Team implements
+	- Disruptive Team implements
+
+
+Holistic Results & Strategy
+	- We saw a lot of consumer behavior change and now that COVID is mostly mitigated, we're seeing that behavior change again
+	- Need a view of what is happening year over year so we can look at those trends very regularly
+
+How Disruptive is leveraging Improved Data Solutions for our clients
+	- iOS 14.5 -> Apps need to ask for permission to track; resulted in Facebook Ad accounts data loss
+	- Getting GA4 implemented today allows you to run it side-by-side along with your UA properties for the next 12-14 months until UA doesn't process data, allowing you to compare results. 
+	- We will be able to see the impact of the new iOS system and compare the reporting before Universal Analytics is gone
+		- Two different ways of tracking
+	- Basic UA account didn't allow you to export data to BigQuery; GA4 allows you to export your data into BigQuery and make your own data warehouse
+		- GA4 is free; now allows you to export customer data
+		- BigQuery is not free, but is affordable to store first-party customer data
+	- GA4 Models conversions with AI/Machine Learning when conversion data isn't available
+
+How is it different from CRM?
+	- BigQuery isn't designed for lots of changes over time; it's basically a SQL database
+	- Most data is automaticaly added/updated/appended from external sources
+	- Not intended for a whole lot of users in there to be appending data
+	- A variety of ways to call from that data into reports. Can run into email service provider
+	- CRM is not going to track everything across your customers interaction with your brands (from web to email interactions)
+	- Google is automatically going to delete data from it's data to be privacy centric, but you can attach that into BigQuery
+	- Run campaigns on facebook from those lists to be able to re-engage dormant users
+
+
+
+June 22, 2022 Webinar 1pm - 2pm -> Amazon; how to get your products on Amazon, expand ecommerce, etc...
