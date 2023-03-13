@@ -1,4 +1,4 @@
-# YouTube Thumbanil URLs
+# YouTube Thumbnail URLs
 
 Each YouTube video has four generated images. They are predictably formatted as follows:
 
