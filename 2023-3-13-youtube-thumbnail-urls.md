@@ -1,3 +1,5 @@
+# YouTube Thumbanil URLs
+
 Each YouTube video has four generated images. They are predictably formatted as follows:
 
 	https://img.youtube.com/vi/<insert-youtube-video-id-here>/0.jpg
