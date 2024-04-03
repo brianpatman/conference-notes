@@ -2,7 +2,7 @@
 https://www.udemy.com/course/creating-accessible-websites/
 
 
-## Lesson 1: Semantic HTML
+## Lesson 3: Semantic HTML
 First step in accessibility is using semantic HTML
 
 If you remove the href attribute from a link, it becomes basically nothing; basically like a div element.
@@ -26,7 +26,7 @@ From MDN Docs on tabindex (https://developer.mozilla.org/en-US/docs/Web/HTML/Glo
 
 > tabindex="0" means that the element should be focusable in sequential keyboard navigation, after any positive tabindex values. The focus navigation order of these elements is defined by their order in the document source.
 
-## Lesson 2: Color Accessible Webpages
+## Lesson 4: Color Accessible Webpages
 1 in 200 women and 1 in 12 men are both colorblind
 
 A myth is all colorblind people only see black and white; lots of diff types. Some peoople can't see Red and Green or Blue and Yellow. As well, in rare cases, people see in grayscale
@@ -78,7 +78,7 @@ Google Chrome DevTool - Emulate Vision Deficiencies
 	- Open Dev Tools, then press Ctrl+Shift+P and type "Rendering" and click the "Show Rendering" option
 
 
-## Lesson 3: ARIA Attributes
+## Lesson 5: ARIA Attributes
 
 ARIA (Accessible Reach Internet Applications) attributes make HTML elements more accessibility and make it easier for screen readers and other assistive tech to understand. Most of them start with "aria-"
 
@@ -93,7 +93,7 @@ Example of aria-label
 
 role attribute - change the semantics of the element. always add "tabindex=0" after the role attribute. This will make sure the element gets added into the tab order
 
-## Lesson 4: Accessible Images
+## Lesson 6: Accessible Images
 
 Background images don't need any accessible fixes, as screen readers will just skip them. However, any image added with the <img> tag needs an "alt" attribute.
 
@@ -116,7 +116,7 @@ Use "aria-labeledby" with a blank alt if a caption labels the image, and point t
 Images with text baked into the image
 	- You have to put the full text into the alt attribute
 
-## Lesson 5: Outline Property 
+## Lesson 7: The "outline" Property 
 
 Every time you focus on an element with a keyboard, an outline should appear around it.
 
@@ -157,7 +157,7 @@ Navigate through the site and see what elements don't have an outline or a bad o
 
 Sadly, just because you applied an outline to all eleemnts on focus, doesn't mean that those elements will all get the outline. You've got to go through and test manually.
 
-## Lesson 6: Tabindex
+## Lesson 8: Tabindex
 
 The way keyboard users navigate a site is by pressing the "tab" key to navigate through interactive elements (buttons, links, font controls, etc...)
 
@@ -183,7 +183,7 @@ You can also use tabindex=-1 on modal windows when they are not in view, since y
 
 It isn't suggested that you should create a div into a button, because there's a lot of functionality baked into the <button> and <a> elements to make using those much easier.
 
-## Lesson 7: Bypass Blocks
+## Lesson 9: Bypass Blocks
 
 If you don't have bypass blocks on the site, keyboard users will have a lot of issues navigating it because they have to go through the entire site just to book an appointment or something like that.
 
@@ -226,7 +226,7 @@ It's also not a good idea to use IDs in your css. IDs should be something specia
 It's important for skip links to not be shown immediately (so sighted users don't have to deal with them), but they can be shown once users press the "tab" key
 
 
-## Lesson 8: Accessible Video & Audio for the Web
+## Lesson 10: Accessible Video & Audio for the Web
 
 For videos and podcasts, you should provide captions for them, which makes it easier for disabled people, but also for search engines, as Googlebot can't play videos or podcasts.
 
@@ -270,12 +270,12 @@ CSS animations have become very popular recently and while they can be helpful, 
 # Making a Real Life Website Accessible
 In this section we will be coding a website that's actually currently inaccessible
 
-## Lesson 9: Inaccessible Website Overview
+## Lesson 11: Inaccessible Website Overview
 - First problem: No outline on focused elements
 - Second problem: Google Maps Iframe has no title, so screen readers will skip it
 - ~Buttons here, but these are links that are styled as buttons. Don't do this~
 
-> **Brian's Note:** Respectfully, I disagree. As long as links point to other pages, 
+> **Personal Note:** Respectfully, I disagree. As long as links point to other pages, 
 > and buttons do something on the page, I think we can definitely style a link 
 > as a button. It's way better than setting up a button element that's hacked 
 > to send users to another page
@@ -287,7 +287,7 @@ Social Media Icons are too claose together and don't have an aria label
 
 Link opening in new tabs bad for accessibility
 
-## Lesson 10: Accessible Navigation
+## Lesson 12: Accessible Navigation
 First thing we need with accessible navigation is good contrast between navigation items and the background of the navigation bar
 
 Navigation all uppercase - bad for accessibility
@@ -335,7 +335,7 @@ Why use outline instead of border? They're the same thing, right?
 	- Outline doesn't move your content around, because the outline is almost added similarly to "position:absolute"
 	- Border would increase your elements height/width as it is activated.
 
-## Lesson 11: Accessible Hamburger Menu
+## Lesson 13: Accessible Hamburger Menu
 Most websites don't have a good hamburger menu.
 
 Use a button element for a hamburger element.
@@ -343,15 +343,248 @@ Use a button element for a hamburger element.
 All hamburger menus should 
 - Be navigable by the Tab key
 - Should announce through the screen reader when the menu is expanded and collapsed
+- Use an "aria-label" or a visible label (author says visible label, but she's pretty hyper accessibility)
+- Use aria-expanded
 
-	<button id="hamburger" aria-expanded="false" aria-label="Menu">
+	<button id="hamburger" aria-expanded="false">
 		<span>Menu</span>
-		<svg></svg>
+		<svg aria-hidden="true"></svg>
 	</button>
 
-The problem with uppercase text is that it is typically really bad for people with dyslexia, because all of the letters are the same size and the same shape (basically a rectangle) and so it makes it harder for dyslexic people to read that text.
+The problem with full text-transform uppercase text is that it is typically really bad for people with dyslexia, because all of the letters are the same size and the same shape (basically a rectangle) and so it makes it harder for dyslexic people to read that text.
+
+The author also tries to makes sure the menu is 44px square, which is a WCAG AAA Success Criterion and is easier for people with Cerebral Palsey or Parkinsons (since they usually have hand tremors) and for people on phones
+
+Hamburgers should expand on Space or Enter key
+
+When you click on the hamburger menu, the focus should stay on that element, and then when the tab key is pressed, it proceeds to the first element of the navigation. Nothing else should get in the way.
+
+Very important to tweak the aria-expanded via JS as the menu is opened and closed.
+
+**Final Course Note:** If you want to make the hamburger even better, you can make it "progressively enhanced". This means that if the user has their JavaScript turned off, the menu shows up expanded on page load, but if their JavaScript is enabled, the menu should be collapsed upon page load
 
 
+> **Personal Note**: This seems a little overkill to be honest. There's not a whole
+> lot of people out there browsing websites without JavaScript. I do regularly try to
+> use CSS where JavaScript could otherwise be used, and most of the guidance I've 
+> found elsewhere says that's the main thing you should be doing.
+
+
+## Lesson 14: Accessible Google Maps Iframe
+
+A google maps Iframe is very convenient, but isn't too accessible for screen readers. Often times screen readers can't even read the address or directions from the map, especially if the map is smaller.
+
+Everytime you add an iframe on your site (any type of iframe, not just Google Maps!), you need a "title" attribute so screen readers can read what the IFrame is supposed to do.
+
+The next challenge is that we need to add in the address separate from the Iframe so users with screen readers can read that.
+
+Another thing that would be useful, is to add driving drections in a text-based format.
+
+Nittany Lion Inn has a very accessible google maps page
+- Map is the full container width
+- It lists the establishment name, address, and phone numbers below the map
+- It also has a separate driving directions page that gives a text-based version that has driving directions from several sections nearby.
+
+You can also use common sense language to describe where your business is located "In the Turtle Creek Mall, next to the Target".
+
+In Summary
+- Give all IFrames a title
+- List address separately from the map
+- Explain in common language where the location of the Iframe is
+- Link out to a separate page for driving directions
+
+
+## Lesson 15: Accessible Contact Forms
+First problem with the form is that there are no associated labels with the inputs. Designers often do this and just use the placeholders in the individual textboxes as labels. However, not all screen readers will announce the placeholders as the names of these fields.
+
+"...which is what makes using placeholders as labels so inaccessible and you should never do that." - Author Quote
+
+Also, using placeholders secondarily is also a very bad idea because the contrast of the placeholder text won't be very high against the background of the field. This isn't great for people with visual impairments or older people, because it makes it harder for them to read.
+
+"You shouldn't use placeholders at all. The boxes should be empty with labels. This is the most accessible you can get in a form." - Author Quote
+
+On Textareas, you can't add placeholders. However, there are some JavaScript solutions some people use where you add text to the text area, but on click you clear the textarea. This is bad because the placeholder text for the textarea might make users think that the form field is populated.
+
+### Fixing the Form
+
+"The first thing we want to change is; every form must have a heading, okay?" - Author Quote
+
+In the example, there is a paragraph that we have given the appearance of a heading. This is bad because people who use screen readers or keyboard users sometimes actually use the headings to navigate to the different sections of the page.
+
+Next thing we want to fix are the input fields with labels
+
+You can add labels in two ways and they are both accessible:
+- You can add the input field within a <label> element
+- Or, you can add the label elmement anywhere around it, and give the <label> element a "for" attribute with the ID of the associated input.
+
+If you need more context for a field, never add more than one <label> per input, but you can always add a <span> or <p> element for that additional context.
+
+Also, you can add a <span> to contain the * element to further separate that from the label text
+
+If you can't mark a field as "required", due to the fact that you need to code up a custom JavaScript validation for it, you can use an ARIA attribute for that!
+
+**aria-required** will mark a field as required for screen readers. Uses values of true/false.
+
+Last thing we have to do is fix the submit button. "Submit" is very vague and not good for accessibility. So, instead, write out what the form is actually going to do after you hit the button.
+
+In the example, instead of "Submit", we use "Send Message"
+
+
+Another thing that's nice to do for non-sighted users is to add **aria-hidden** to the asterisks marking the fields as required. Blind users know that the fields are required due to either the "required" or "aria-required" attributes, so adding the stars is both redundant and could cause confusion.
+
+As well, you should also make sure that, as the user is tabbing through the form, that each hit of the "Tab" key sends them to the next field to fill in.
+
+Sometimes you see links in between input elements "Read our Privacy Policy" or something like that. Author says you shouldn't do that because it's annoying and gets in the way.
+
+Also, when focusing on the form field elements, there should be an outline or different colored border when the field is currently focused on.
+
+
+## Lesson 16: Form Instructions
+If you want to use the asterisk to denote which fields are mandatory, you need to provide instructions on top of the form denoting what the asterisks are used for.
+
+On submit, the author makes a paragraph appear above the form saying "All fields marked with an asterisk (\*) are required"
+
+Even though we added required on each field and screen readers will announce fields as required, people who aren't using screen readers need more context on how to populate the form correctly.
+
+## Lesson 17: Accessible Icons
+First step is to use the right markup. SVGs are preferable because you don't have to load another font, they're scalable, and they have the best semantics for icons.
+
+Second thing is to give icons sufficient contrast against the background. Older people and people with visual impairments won't be able to see them
+
+Always put text next to the icons; always. That way it's very obvious what the icons mean. 
+
+Only reason you don't put text next to them is if you are placing Social Media icons. Unless the social media icon is extremely rare, at which point you might want to place text.
+
+Why are you using the icon?
+- Decoration?
+- Transfer Meaning?
+
+"Any icon is ambiguous. Never never assume the user knows what the icon is. Always put the text right next to it, unless it's really well-known Social Media" - Author Quote
+
+For decorative icons, set **aria-hidden** to "true"
+
+For social media icons links using SVGs, add an aria-label to the link and set the inner svg to have an attribute **aria-hidden** to "true".
+
+Don't be afraid to hide icons if you are just using them for decoration.
+
+If you are using font icons instead of SVG icons, do the exact same thing. Set an aria label on the link and then hide the icon itself with aria-hidden.
+
+## Lesson 18: Accessible Links
+
+Author gives basic of accessible links, but says you should look up more details about it, because it can be quite complicated.
+
+Things to look for a link:
+- Contrast of the link against the text and the background
+- Link should have an outline when being focused on
+
+
+For links that open in a new window.
+
+"This is very inaccessible and you should never use target='\_blank'." - Author Quote
+
+If, for some reason, you **have** to open a link in a new tab, there are a few things that you can do to make it more accessible. You need to notify the user that the link is going to open in a new window with a "link external" icon or an ARIA label that ends with "- opens in new tab".
+
+Another solution is to use "aria-describedby" and set that to a hidden div that has the "opens in new tab" text inside of it. Basically what this will do is read the text of the link first and then go and find the element that aria-describedby points to, and then read that text next.
+
+With both solutions, you should hide any external link icons from screen readers.
+
+The next problem is that the link doesn't look like a link, minus a slightly different color. The way to do that is with an underline via text-decoration.
+
+"Now, we need to bring back text doecration for links. And I know people like to disable them, but it's actually bad. So you should never disable the line in links." - Author Quote
+
+Also, don't use text-decoration underline on normal text, because people will think it's a link.
+
+"If you want to add emphasis to text, use bold, not underline" - Author Quote
+
+
+Also, don't name links generically. Because people use tab order or people that use screen readers typically skim through stuff by tabbing through the focusable elements, that makes links that are named "here", for example, really bad for accessibility.
+
+Instead of 
+	<p>... To make an appointment, click <a href="">here!</a></p>
+
+Use:
+	<p>... <a href="">Make an appointment today!</a></p>
+
+
+On an image inside of a link, you should make the "alt" the text that you would use if the image wasn't there. So this, for example for a main logo:
+	<a href="/" class="logo-holder">
+		<img class="logo" alt="Homepage" src="/assets/templates/images/logo.svg">
+	</a>
+
+For sighted users, it's a bit more of a challenge to make sure that they know that the image is a link. Because if you make the image look like a normal image that's not a link, sighted users might not pick up on it.
+
+The author likes to keep the underline even under a linked image to indicate it's a link.
+
+> **Personal Note:** I think rather than add an underline on linked images, 
+> what you should do is to make the image have a color overlay via an :after 
+> element that appears only on hover. This is WAY more obvious to sighted users 
+> and probably way more obvious to people with other visual disabilities, like 
+> those who need high contrast.
+
+> Plus this is WAY better design than having a random underline underneath
+
+
+## Lesson 19: Test our Website with NVDA screen reader on desktop with Chrome
+
+At one point, the screen reader reads "Main Navigation Navigation". It's not a giant accessibility violation, but it is definitely annoying to users that use screen readers.
+
+You need to write down any bugs you come upon as part of the audit so you can address them later.
+
+The IFrame is made by Google Maps, so you can't actually fix that issue directly. But, please repoprt the issue to the vendor so they can fix it.
+
+On an actual form, you also need to test the form when it succeeds and when it errors out.
+
+Use tab key to navigate between interactive elements, while you use the arrow key to enter "Browse mode", which announces absolutely every element, which is useful for blind users reading text on a page.
+
+A failure that makes browsing the site annoying is a stray \<hr\> element, which is used as decoration. But you should mainly use CSS for decoration rather than HTML elements.
+
+Do not have blank elements, as that can make things confusing or hard to navigate.
+
+Some screen readers announce the Copyright symbol as "Copyright", so if you have "Copyright (c) Furbaby All Rights Reserved", it will read it as "Copyright Copyright".
+
+Author of the course suggests that, instead of having an actual interactive Google Map on the homepage, that we should just replace it with an image with a good alt tag and perhaps have the actual interactive Google Map on the Contact page.
+
+It is smartest to test websites as you develop them so you can catch bugs early.
+
+## Lesson 20: How to Test an Accessible Website
+
+Author says that ideally, you want to test the website with 4 screen readers; NVDA, JAWS, and mobile screen readers such as VoiceOver and TalkBack
+
+Test via Chrome Lighthouse to find further accessibility violations. However, don't use these automated tools as the only method to test these kinds of websites.
+
+### First - Test if all interactive elements are focusable.
+
+### Second - Zoom into the website with Ctrl++ or By holding down Ctrl and using your mouse wheel to zoom in. 
+- Zoom in 200% and then 400% and make sure things look okay. This is based on the WCAG criteria. When you get down to 400%, most stuff should be in one column.
+- Horizontal scrollbar bad when being zoomed in, unless within a table or a big flowchart.
+
+### Third - Accessibility Checklist
+- (https://www.a11yproject.com/checklist/). 
+- This makes sure you don't forget some things.
+- Most of the time (99.9%), under WCAG criteria, the author targets only up to AA criteria.
+
+### Fourth - High Contrast Mode Testing
+After this, the author will go ahead and look at the website in high contrast mode. Even though it's not in the WCAG, it's good user experience to make things work for those users and you can still possibly get sued for it.
+
+"High Contrast Mode only works in Edge" - Not sure that this is still true, as Chrome has a High Contrast mode option.
+	- Go to Searchbar and go to "Ease of Access High Contrast Settings", and turn on the "high contrast" setting.
+
+The logo isn't showing because it's a black logo on a black background. Author has no suggestion other than to involve a graphic designer to make the logo work better on high contrast mode. It's also not showing as a link, because links are highlighted in yellow.
+
+After this, the site should be good to go!
+
+Also, make sure the website scrolls when using the arrow keys.
+
+Further Tip - If you have friends who are accessibilty experts, send it to them and see what they think, because they might see accessibility issues that you don't see. Kind of like an editor for an article.
+
+When you zoom more than 100%, the text must enlarge or scale as you zoom. Otherwise it's not accessible. Some web developers disable that function if you zoom more than 100%, so make sure that works and that the columns and layout scale at the same time.
+
+
+# Advanced Web Accessibility Techniques
+
+## Lesson 21: Acccessible Vanilla JavaScript ToDo App - Part 1: Overview
+## Lesson 22: Acccessible Vanilla JavaScript ToDo App - Part 2: Coding the HTML
+## Lesson 23: Acccessible Vanilla JavaScript ToDo App - Part 3
 
 
 ## Other Notes
@@ -359,3 +592,9 @@ The problem with uppercase text is that it is typically really bad for people wi
 Use an <a> tag when you want to navigate to a new page or an external resource i.e. links.
 
 Use a <button> tag to perform an action like to open a modal, delete an item, close a modal, etc.
+
+
+
+aria-pressed - The aria-pressed attribute indicates the current "pressed" state of a toggle button
+
+aria-expanded - The aria-expanded attribute is set on an element to indicate if a control is expanded or collapsed, and whether or not the controlled elements are displayed or hidden.
