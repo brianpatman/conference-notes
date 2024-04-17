@@ -583,15 +583,68 @@ When you zoom more than 100%, the text must enlarge or scale as you zoom. Otherw
 # Advanced Web Accessibility Techniques
 
 ## Lesson 21: Acccessible Vanilla JavaScript ToDo App - Part 1: Overview
+
+A ToDo List where each element has a checkbox, label, and "Delete Task" button. The task of this section is going to be making this ToDo list in an accessible way.
+
+Idea was inspired by "Inclusive Components" ToDo List article.
+https://inclusive-components.design/a-todo-list/
+
+First lesson is going to be the actual HTML/CSS and then the second part is going to be the JavaScript.
+
 ## Lesson 22: Acccessible Vanilla JavaScript ToDo App - Part 2: Coding the HTML
+
+People with screen readers will also use hadings to navigate through pages if focusable elements aren't there.
+
+Author Adds a tabindex=-1 on the H1 - She says this is to make the element interactive when tabbing
+> This is just plain wrong; it should be tabindex=0 if she wants it to be interactive
+
+
+Author adds a form, even though there is not going to be any "submit" action associated with it. It makes way more accessible semantically if you use the form element by default and then put your input and labels inside that element.
+
+Add an action attribute to the form. Author mentions she is going to later prevent the default action from triggering via Javascript. However, you do need to add text in the "action" attribute to validate as valid HTML. Also set the method to "post".
+
+Author sets label to "Add a new task to your list (required)" just because there's only one. 
+
+Author also adds a \<div\> within the \<label\> and adds an \<input\> inside of that.
+
+She also set the Submit button to have the value of "Add" since that's more valuable than the default "Submit" value.
+
+Author explains that there should be a hint to the users of what kind of value goes in the textbox. Most people use the "placeholder" element, but the placeholder element isn't that acccessible for those with high contrast vision and such.
+
+Another problem is that this kind of hint goes away once the user starts typing, or if the field gets auto-filled with autocomplete. Her recommendation is to add other text on the form that makes it apparent what the hint is:
+
+	<div id="example">
+		Example: Feed the Chicken
+	</label>
+
+Then, set the "aria-describedby" on the input element to this:
+
+	<input aria-describedby="example" ...
+
+This example must be within the form and can't be a second \<label\> for the input.
+
+The next thing is to add an empty list and what the author calls a "Live Region", which is a markup that you mark with a role saying "you are in charge of notifying the screen reader of any change with the page"
+
+You can use a role of "alert" or "status" on a \<div\> element, and "aria-live" to "polite". You can also set the aria-live to "assertive".
+	Polite will wait for the screen reader to be done with it's current elements before announcing this text
+	Assertive interrupts the screen reader in the middle of it reading other things.
+
+So something like this:
+
+	<div role="status" aria-live="polite" id="feedback" class="feedback">
+
+Also, she doesn't hide this "status" field, because screen readers have very mixed support for aria-live and may get confused if it's set to display none.
+
+Next lesson we add the styles and JavaScript to make this a little nicer and make it actually work.
+
 ## Lesson 23: Acccessible Vanilla JavaScript ToDo App - Part 3
 
 
 ## Other Notes
 
-Use an <a> tag when you want to navigate to a new page or an external resource i.e. links.
+Use an \<a\> tag when you want to navigate to a new page or an external resource i.e. links.
 
-Use a <button> tag to perform an action like to open a modal, delete an item, close a modal, etc.
+Use a \<button\> tag to perform an action like to open a modal, delete an item, close a modal, etc.
 
 
 
