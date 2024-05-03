@@ -596,7 +596,8 @@ First lesson is going to be the actual HTML/CSS and then the second part is goin
 People with screen readers will also use hadings to navigate through pages if focusable elements aren't there.
 
 Author Adds a tabindex=-1 on the H1 - She says this is to make the element interactive when tabbing
-> This is just plain wrong; it should be tabindex=0 if she wants it to be interactive
+> ~~This is just plain wrong; it should be tabindex=0 if she wants it to be interactive~~
+> Welp, I was wrong. Apparently this gives the H1 the ability to be focused by JavaScript, but keeps it out of the flow of keyboard accessible elements.
 
 
 Author adds a form, even though there is not going to be any "submit" action associated with it. It makes way more accessible semantically if you use the form element by default and then put your input and labels inside that element.
@@ -638,6 +639,83 @@ Also, she doesn't hide this "status" field, because screen readers have very mix
 Next lesson we add the styles and JavaScript to make this a little nicer and make it actually work.
 
 ## Lesson 23: Acccessible Vanilla JavaScript ToDo App - Part 3
+> Note: She's writing most of her JavaScript in very basic vanilla JS without Jquery. I have converted most of these code examples into JQuery since I mostly use that.
+
+Time to code in JavaScript
+
+Need to add value to the status element or "live region" so the screen reader knows what just happened after the item is added to the list. So use this kind of function:
+
+	function screenReaderFeedback(task,feedback="added"){
+		// $("#feedback").text($task + " " + $feedback)
+		$("#feedback").text(`${task} ${feedback}.`); // Using Template Literals
+	}
+
+Template Literals are basically f strings for JavaScript.
+
+She enlarged input and submit button because WCAG tells you that elements need to be at least 44px wide by 44px high.
+
+> ### JavaScript Bubbling
+> If you click an element and that element has a click event, that click event actually moves it's way all the way up the DOM tree to the top level \<html\> element
+>
+> YouTube Video Tutorial about Bubbling: https://youtu.be/SqQZ8SttQsl
+
+Since we don't know how many delete buttons there are, we're gonna use this bubbling method to activate the specific button. We target the #list that contains all tasks and checks that for a click element instead of the delete task button directly.
+
+	$("#list").on("click",function(){
+		if($(event.target).hasClass("delete_task")){
+			const $li = $(event.target).parent();
+			$li.remove();
+		}
+	});
+
+However, on this Delete Task button, we have a problem. Basically, when you delete the task, the focus ring disappears, forcing users who are blind and using screen readers to navigate the page to "lose their place".
+
+There are different ways to skin this cat. However, what the author is deciding to do is to focus on the \<h1\> heading when the task is deleted.
+
+	function moveFocus($element){
+		$element.focus();
+	}
+
+	$("#list").on("click",function(){
+		if($(event.target).hasClass("delete_task")){
+			const $li = $(event.target).parent();
+			$li.remove();
+			moveFocus( $("h1") );
+		}
+	});
+
+That tabindex="-1" on the heading allows it to be focused via JavaScript without actually being "focusable" in the regular document flow.
+
+The author also mentions that you can move the focus onto the first element of the task list, but it's mostly personal preference on what you exactly want to do with the focus. Focus management is very tricky sometimes.
+
+The next thing is that we actually also need to update our ARIA live region when a task has been deleted, to keep screen reader users informed of what's going on there. So we'll just amend our previous click function to do that.
+
+	$("#list").on("click",function(){
+		if($(event.target).hasClass("delete_task")){
+			const $li = $(event.target).parent();
+			const taskName = $itemContainer.text();
+
+			$itemContainer.remove();
+			moveFocus( $("h1") );
+			screenReaderFeedback(taskName,"removed");
+		}
+	});
+
+Actions and feedback we take for granted with being sighted need a little more feedback for blind users.
+
+
+Whenever you finish an accessible program, test it on a screen reader just to make sure.
+
+
+### Lesson 24: Join our Accessibility Community
+
+https://www.youtube.com/@WebAccessibility/videos
+
+https://facebook.com/groups/webaccessibilityeducation
+
+https://medium.com/@web-accessibility-education
+
+Mentions a Discord community, but there's no invite link? @Dagny on Discord.
 
 
 ## Other Notes
