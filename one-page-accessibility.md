@@ -183,3 +183,11 @@ WCAG Guidelines - Elements should be at least 44px wide by 44px high.
 On the Delete Task button, however, there's a problem. When you delete the task, the focus ring disappears, which makes screen readers "lose their place".
 
 There are multiple ways to skin this cat, but she went ahead and re-focused on the heading above the form (which has tabindex=-1, so it can be programmatically focused).
+
+## Modal Attributes
+
+All modals should have the following attributes
+- role="dialog"
+- aria-modal="true"
+- aria-labelledby="\[ID_OF_MAIN_POPUP_HEADING\]" - Set this to the ID of the main heading within the modal; if there is no heading, use aria-label instead
+- tabindex="-1"
