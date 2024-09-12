@@ -297,6 +297,16 @@ Also, it creates a problem under WCAG's SC 2.4.11 called "Focus not Obscured (Mi
 
 So, basically, use the Popover API as a helper, but use JavaScript to further make sure that it is fully accessible. Also close navigation when keyboard navigation moves outside of it.
 
+> Author Note on CSS Tricks Article (https://css-tricks.com/the-other-c-in-css/)
+>
+> Sara says in a comment that the SC 2.4.11 is actually not violated in the example
+> she mentioned because auto popovers are dismissable via the Escape key, which
+> SC 2.4.11 carves out as an exemption.
+>
+> However, this is a violation of the AAA criterion SC 2.4.12 Focus Not 
+> Obscured (Enhanced). However, generally, she says, making sure focusable elements 
+> are visible is important for usability.
+
 ## Changes of Context
 
 With more powerful CSS features available today, you can code a lot more in just basic CSS that responds to user interaction. Especially with the :has() selector. While some things are used in appropriate contexts, they can be problematic in other contexts.
