@@ -350,6 +350,7 @@ Author personally uses visually-hidden class mostly for text content.
 
 
 ## Master Table of all CSS and HTML Hiding techniques
+Also found at https://practical-accessibility.today/code/hiding-techniques/
 
 | Technique                                 | Exposed to a11y APIs | keyboard accessible | visually accessible (rendered) | children exposed to a11y APIs |
 | ----------------------------------------- | -------------------- | ------------------- | ------------------------------ | ----------------------------- |
@@ -359,12 +360,14 @@ Author personally uses visually-hidden class mostly for text content.
 | clip-path: inset(100%)                    | Yes | Yes | No | Yes |
 | position (off-canvas)                     | Yes | Yes | No | Yes |
 | .visually-hidden class                    | Yes | Yes | No | Yes |
+| display: contents;                        | Yes | No | No | Yes |
 | hidden attribute                          | No | No | No | No |
 | inert attribute                           | No | No | Yes | No |
 | tabindex="-1"                             | Yes | Not reachable via tab key | Yes | Yes |
 | disabled attribute                        | Yes | Not reachable via tab key | Yes | Yes |
 | aria-hidden attribute                     | No | Yes | Yes | No |
 | role="none"/role="presentation" attribute | No | Yes | Yes | Yes, unless they are semantically tied to the element |
+
 
 
 
