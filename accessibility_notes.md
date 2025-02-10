@@ -490,7 +490,7 @@ With both solutions, you should hide any external link icons from screen readers
 
 The next problem is that the link doesn't look like a link, minus a slightly different color. The way to do that is with an underline via text-decoration.
 
-"Now, we need to bring back text doecration for links. And I know people like to disable them, but it's actually bad. So you should never disable the line in links." - Author Quote
+"Now, we need to bring back text decoration for links. And I know people like to disable them, but it's actually bad. So you should never disable the line in links." - Author Quote
 
 Also, don't use text-decoration underline on normal text, because people will think it's a link.
 
@@ -596,7 +596,7 @@ First lesson is going to be the actual HTML/CSS and then the second part is goin
 People with screen readers will also use hadings to navigate through pages if focusable elements aren't there.
 
 Author Adds a tabindex=-1 on the H1 - She says this is to make the element interactive when tabbing
-> ~~This is just plain wrong; it should be tabindex=0 if she wants it to be interactive~~
+> ~~ This is just plain wrong; it should be tabindex=0 if she wants it to be interactive ~~
 > Welp, I was wrong. Apparently this gives the H1 the ability to be focused by JavaScript, but keeps it out of the flow of keyboard accessible elements.
 
 
@@ -616,7 +616,7 @@ Another problem is that this kind of hint goes away once the user starts typing,
 
 	<div id="example">
 		Example: Feed the Chicken
-	</label>
+	</div>
 
 Then, set the "aria-describedby" on the input element to this:
 
@@ -637,6 +637,7 @@ So something like this:
 Also, she doesn't hide this "status" field, because screen readers have very mixed support for aria-live and may get confused if it's set to display none.
 
 Next lesson we add the styles and JavaScript to make this a little nicer and make it actually work.
+
 
 ## Lesson 23: Acccessible Vanilla JavaScript ToDo App - Part 3
 > Note: She's writing most of her JavaScript in very basic vanilla JS without Jquery. I have converted most of these code examples into JQuery since I mostly use that.
@@ -716,6 +717,12 @@ https://facebook.com/groups/webaccessibilityeducation
 https://medium.com/@web-accessibility-education
 
 Mentions a Discord community, but there's no invite link? @Dagny on Discord.
+
+
+
+
+
+
 
 
 ## Other Notes
