@@ -429,3 +429,229 @@ Uses GPT-4o to generate a trend line through data or analyze a bar chart. Also a
 
 ### ChatGPT-4o: Expanded Knowledge Base and Cross
 ChatGPT-4o also has "memory" and you can ask it to add items to memory.
+
+### ChatGPT-4o with Canvas: Interactive Visual Workspace
+
+Lets you collaborate with AI by refininig content directly in a shared workspace.
+
+This opens a document editor where you can collaborate. You can ask ChatGPT to adjust the length, change the reading level of a section, suggest edits, or add emojis.
+
+There's even a "track changes" button in the editor so you can see what's been changed while you've been chatting with ChatGPT.
+
+### ChatGPT Update: O1 Preview + O1 Mini + 4o Mini Part 1
+
+New Models Released by OpenAI. Choosing between models require you to be a Plus user.
+
+**O1 Preview**
+- High stakes, accuracy-driven tasks. 
+- Perfect for academic research, Complex Coding, or Scientific Analysis
+- Slower and more costly, so it's best used selectively.
+- This and O1 Mini don't have access to the internet
+
+**O1 Mini**
+- Fast and efficient for coding tasks and quick project iterations
+- Balances speed and reasoning without the high cost of o1 preview
+- Great for coding-focused, budget-friendly applicaitons
+- This and O1 Preview don't have access to the internet
+
+**GPT-4o Mini**
+- Versatile, general-purpose and affordable
+- Handles both text and image inputs
+- Ideal for customer service, content generation, and multilingual tasks
+
+
+### ChatGPT: Shared Chats
+
+You can share the chat with co-workers or colleagues. However, sharing it will not update when you continue the conversation. It will only share the conversation up to this point.
+
+You can also go to your settings to show all of your shared links and delete those shared links individually.
+
+The person you send the chat to can also continue the chat with GPT themselves
+
+### ChatGPT Temporary Chat
+You can actually set a chat as temporary, which won't appear in your history, use or create memories, or be used to train ChatGPT's models.
+
+You can still use custom instructions.
+
+Turn on for privacy or one-time questions.
+
+### ChatGPT Desktop App
+Windows users need a paid plan to use the Desktop app, but Mac users can use it for free.
+
+Can instantly launch the app from your desktop.
+
+Companion windows that stay on top of other windows and you can add files directly from your computer.
+
+You can also use voice to text on the Desktop app.
+
+### ChatGPT-4: DALL-E 3
+You can choose the DALL-E 3 mode in ChatGPT to have ChatGPT to create an image.
+
+It can also generate text in the image very easily, which is uncommon for older AI models.
+
+### DALL-E 3: Gen IDs
+Gen IDs are a unique code that's generated internally for each image DALL-E 3 creates and, if you ask ChatGPT for the code, it will give it to you.
+
+Then you can use this code to reference that exact image.
+
+Game changer for consistency between images
+
+**Cross-referencing** - take 2 different Gen IDs and have ChatGPT combine them.
+
+Seems like cross-referencing takes some doing, as sometimes ChatGPT gets it really wrong.
+
+Also lets us create characters that look like they come out of the same world, meaning you can make comics, stories, etc...
+
+
+### DALL-E 3: Inpainting
+Allows you to edit parts of an existing image by highlighting part of an image you want to change and describing what changes you want to take place.
+
+So you can add a flock of birds in the sky, or decrease the number of clouds, etc... 
+
+After you inpaint an image, DALL-E 3 creates an updated prompt describing the new image, so you can also grab that and use it to for further prompting or further iteration.
+
+
+### ChatGPT Team Workspace
+There's a "Team" subscription tier with ChatGPT where you can exclude OpenAI training on your data, and invite other people to your ChatGPT team.
+
+You can also create custom GPTs that are only available in your ChatGPT Team, but are available for everyone in the team to use.
+
+### OpenAI Playground Overview
+
+https://platform.openai.com/playground/
+
+The Playground gives you a chatGPT like interface where you have more control over many parameters, like max length, temperature, etc...
+
+You can also use the "Assistants" model when you want to add instructions to the model to fine-tune it.
+
+
+## ChatGPT: Simplify Complex Information, Instantly Proofread, and Re-Organize Data
+
+### Summarize Dense Text
+- Summmarize into Bullet Points
+- Keywords
+- Most Important Dates and People from the Text
+- Compare "building a rocket to baking a cake"
+
+### Rewrite text for specific audience
+"Explain gravity to a 5th grader"
+"Explain gravity to a high-school student"
+
+"Explain increase in computing power to an engineer"
+"Explain increase in computing power to someone working in marketing"
+
+### Health Optimization
+Use ChatGPT to create diet and workout plans for the week.
+
+### Language Translation
+Can translate from other languages and summarzie it, etc... Can also adjust the reading level of the end user
+
+### Quickly Summarize Videos
+Summarize YouTube Videos
+
+"YouTube Summary with ChatGPT" Chrome Extension
+
+He grabs the transcript from a video about replacing a broken doorknob and asks ChatGPT to summarize it into 5 bullet points
+
+### Proofreading Text
+
+
+### Re-Organize Data: Basic
+If you have a list of data, you can ask ChatGPT to reorganize it alphabetically, chronologically, or even to organize in tabular format or add geographic location.
+
+In this example, 20 important dates from world history
+
+
+### Re-Organize Data: Named Entity Recognition
+Basically just Extracting Names from Text
+
+Prompt: "Please extract names, dates, and locations from the following text: [TEXT DUMP]"
+
+
+### Re-Organize Data: Text Classification - Advanced
+You can also use ChatGPT to categorize text data into different classes or categories based on their content.
+
+In the case of the 20 important dates from world history, you can ask ChatGPT to organize it based on category; war, political, natural disaster, etc...
+
+Also can ask it to organize data by significance, etc...
+
+
+### Case Study: Build Charts with ChatGPT
+Someone uses ChatGPT to, when given a data table, to generate an html page with charts and insights into the data.
+
+
+### Review and Improve Writing
+"Review and give me five ways I can improve the writing in this article: [ARTICLE TEXT]"
+"Improve this to make it sound better: [ARTICLE TEXT]"
+
+Then you can ask ChatGPT to apply those improvements to the original text or to engineer the content to another audience.
+
+"Improve the text to sound very professional and appeal to record labels and music studios that are hiring"
+
+
+### Create Essay Questions, Multiple Choice, True, or False
+You can also take text and create fill-in-the-blank, essay questions, multiple-choice questions and true/false questions. Plus the Answer Key for the questions.
+
+Great for Teachers.
+
+
+### Learning Activity: Synthesize Complex Information
+Use all of the techniques in the chapter to synthesize information or data that is relevant to your hobbies or work
+
+
+
+## ChatGPT: Content Creation, Social Media, Copywriting, SEO, and Video Scripts
+
+### Intro to Copywriting and Content Creation
+We'll learn about the best types of content you can create for hobbies and business projects.
+
+Connect and use all of the different AI tools to create a new level of productivity in a fraction of the time.
+
+### Articles and Blogs
+Writing articles about subjects, even ones you don't know anything about.
+
+You can also write one geared towards kids or create humor for your articles
+
+### Write and Rephrase
+You can ask ChatGPT to rephrase certain paragraphs or even add sections that you want to include.
+
+Also, you can ask it to add in the top ten SEO keywords based on sleep cycles.
+
+### Create an Ad for a Product
+ "Write me copy in 100 words for a facebook ad to sell reusable water canteens, my target audience is environmentally conscious and outdoor people"
+
+ Moves over to Midjourney for creating a product image of a water bottle and then import into Canva to create the ad.
+
+
+### Scripts for Social Media Videos
+YouTube Video Scripts
+
+2 minute script for a skit about "eating the last slice of pizza"
+
+
+### Product Specific Content
+Product Descriptions 
+
+3 ideas that I can film with 2 of my friends about the produt. Make the 3 ideas in the storytelling style of George Lucas
+
+artgrid.io - stock footage
+
+
+### Case Study: Mint Mobile Commercial
+
+### Video Description, Title, and Tag
+### SEO and Keywords
+### Scripts for Podcasts
+### Sales Copy and Direct Response
+### Article: Great AI Prompts
+### Write an Original Song with Chords and Lyrics
+### Create Your Resume
+### Personal Bio
+### Speech or Presentation from Scratch
+### Create an Entire E-Book
+### Social Media Posts
+### Content for Specific Niches
+### Case Study: Create Icons
+### Meet Your Expert AI Instructor
+### ChatGPT for Gmail
+### Learning Activity: Create an Ad or Social Media Post
