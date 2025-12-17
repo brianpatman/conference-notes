@@ -186,8 +186,12 @@ There are multiple ways to skin this cat, but she went ahead and re-focused on t
 
 ## Modal Attributes
 
-All modals should have the following attributes
+All modals should have the following attributes at rest:
 - role="dialog"
 - aria-modal="true"
-- aria-labelledby="\[ID_OF_MAIN_POPUP_HEADING\]" - Set this to the ID of the main heading within the modal; if there is no heading, use aria-label instead
+- aria-labelledby="\[ID_OF_MAIN_POPUP_HEADING\]" -> Set this to the ID of the main heading within the modal; if there is no heading, use aria-label instead
 - tabindex="-1"
+- aria-hidden="true" -> If you don't have this, the user can still get to the content of this popup if they are navigating with the arrow keys
+
+When modals open up, change the following attributes:
+- (remove aria-hidden attribute)
